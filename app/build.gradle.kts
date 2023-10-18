@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.satyamthakur.learning.composeelements"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.satyamthakur.learning.composeelements"
