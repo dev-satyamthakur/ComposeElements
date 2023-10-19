@@ -2,6 +2,7 @@ package com.satyamthakur.learning.composeelements
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -9,11 +10,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -58,8 +61,20 @@ class MainActivity : ComponentActivity() {
                         },
                         onValueChange = {
                             textFieldState = it
-                        }
+                        },
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
                     )
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Button(onClick = {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Hi " + textFieldState,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }) {
+                        Text("Greet Me!")
+                    }
                 }
             }
         }
